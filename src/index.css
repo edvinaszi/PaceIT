@@ -1,0 +1,215 @@
+.logo {
+  width: auto;
+  height: 100px;
+}
+
+.mainContent {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: rgba(249, 251, 239, 0.828);
+}
+
+body {
+  background-color: rgba(249, 251, 239, 0.828);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.Body {
+  margin: 10px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+}
+
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.header {
+  background-color: rgb(168, 175, 146);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding: 2px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-sizing: border-box;
+}
+.startStopButton {
+  background-color: antiquewhite;
+  width: 50px;
+  height: 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  border-color: rgba(86, 86, 86, 0.535);
+  cursor: pointer;
+}
+
+.startStopButton:hover {
+  background-color: rgba(250, 235, 215, 0.746);
+}
+
+.Footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(200, 200, 196, 0.632);
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  height: 75px;
+}
+
+.FooterButton {
+  height: 40px;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: rgba(63, 65, 62, 0.352);
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.FooterButton:hover {
+  background-color: rgb(168, 175, 146);
+  border: solid;
+  border-color: rgba(250, 235, 215, 0);
+  height: 37px;
+}
+
+.startButton {
+  cursor: pointer;
+  background-color: rgba(79, 156, 85, 0.579);
+  border: solid 0.5px;
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+}
+
+.stopButton {
+  cursor: pointer;
+  background-color: rgba(187, 39, 39, 0.664);
+  border: solid 0.5px;
+  border-radius: 5px;
+  border-color: rgba(0, 0, 0, 0.606);
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  margin: 5px;
+  color: rgba(255, 255, 255, 0.928);
+}
+
+.display {
+  font-size: 250%;
+  color: rgba(54, 54, 54, 0.866);
+}
+
+.stopwatch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatchButtons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.stopDiv {
+  width: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pauseButton {
+  cursor: pointer;
+  background-color: rgba(139, 134, 134, 0.664);
+  border: solid 0.5px;
+  border-radius: 5px;
+  border-color: rgba(0, 0, 0, 0.606);
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  margin: 5px;
+  color: rgba(255, 255, 255, 0.928);
+}
+
+.newRunButton {
+  border: solid;
+  margin: 8px;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.resetButton {
+  border: solid 0.5px;
+  margin: 8px;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgba(140, 142, 143, 0.6);
+}
+
+.resumeButton {
+  border: solid 0.5px;
+  margin: 8px;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgba(104, 194, 104, 0.664);
+}
+
+.StatsScreen {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.StatsScreen-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  .Footer {
+    height: 60px; 
+  }
+
+  .StatsScreen {
+    margin-bottom: 60px; 
+  }
+}
+
+input, textarea, select {
+  font-size: 16px; /* Ensure input text size is large enough to avoid zoom */
+  -webkit-text-size-adjust: 100%; /* Prevent zooming when inputs are focused */
+  -moz-text-size-adjust: 100%;
+}
