@@ -62,9 +62,8 @@ function PaceSetter() {
 
       setPaceIntervalId(intervalId);
 
-      return () => clearInterval(intervalId); // Clear interval when the component is unmounted or paused
+      return () => clearInterval(intervalId); 
     } else {
-      // Clear the interval when paused
       clearInterval(paceIntervalId);
     }
   }, [isRunning, currentDistance, startTime, targetPace, elapsedTime, isPaused]);
@@ -82,19 +81,19 @@ function PaceSetter() {
   };
 
   const pauseRun = () => {
-    setIsPaused(true);  // Set pause flag
-    setElapsedTime(elapsedTime + (Date.now() - startTime));  // Track the elapsed time
-    clearInterval(paceIntervalId);  // Stop pace calculation when paused
+    setIsPaused(true); 
+    setElapsedTime(elapsedTime + (Date.now() - startTime)); 
+    clearInterval(paceIntervalId); 
   };
 
   const resumeRun = () => {
-    setIsPaused(false);  // Reset pause flag
-    setStartTime(Date.now());  // Reset start time for resumed run
+    setIsPaused(false); 
+    setStartTime(Date.now()); 
     resetBackground();
   };
 
   const stopRun = () => {
-    clearInterval(paceIntervalId);  // Stop the pace calculation
+    clearInterval(paceIntervalId); 
     saveRunStats();
     resetBackground();
     setIsRunning(false);
@@ -110,10 +109,10 @@ function PaceSetter() {
   const saveRunStats = () => {
     const elapsedTimeInMinutes = elapsedTime / (1000 * 60);
     const newRunStats = {
-      distance: currentDistance / 1000, // km
-      time: elapsedTimeInMinutes, // minutes
-      speed: currentSpeed, // km/h
-      pace: currentPace, // min/km
+      distance: currentDistance / 1000,
+      time: elapsedTimeInMinutes, 
+      speed: currentSpeed,
+      pace: currentPace, 
       date: new Date().toLocaleString(),
     };
 
@@ -162,7 +161,7 @@ function PaceSetter() {
         <>
           <p>Target Speed: {targetSpeed ? `${targetSpeed} km/h` : 'N/A'}</p>
           <p>Current Speed: {currentSpeed ? `${currentSpeed.toFixed(2)} km/h` : '0 km/h'}</p>
-          <p>Distance Covered: {(currentDistance / 1000).toFixed(2)} km</p>
+          <p>Distance Covered: {currentDistance.toFixed(2)} km</p>
           <p>Target Pace: {targetPace ? `${targetPace} min/km` : 'N/A'}</p>
           <p>Current Pace: {currentPace ? `${currentPace} min/km` : 'Calculating...'}</p>
           <Stopwatch

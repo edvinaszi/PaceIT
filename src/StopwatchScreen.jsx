@@ -119,7 +119,7 @@ function StopwatchScreen() {
                     onDistanceChange={handleDistanceChange}
                   />
                   <div className="summary">
-                    <p>Total Distance: {(distance / 1000).toFixed(2)} km</p>
+                    <p>Total Distance: {distance.toFixed(2)} km</p>
                     <p>Average Pace: {averagePace ? averagePace + " min/km" : "0:00 min/km"}</p>
                   </div>
                 </>
@@ -129,7 +129,7 @@ function StopwatchScreen() {
 
           {isFinished && (
             <div className="summary">
-              <p>Total Distance: {(distance / 1000).toFixed(2)} km</p>
+              <p>Total Distance: {distance.toFixed(2)} km</p>
               <p>Average Pace: {averagePace ? averagePace + " min/km" : "N/A"}</p>
               <p>Elapsed Time: {formatTime(elapsedTime)}</p>
               <div className="newRunButton" onClick={startNewRun}>Start New Run</div>
