@@ -209,7 +209,7 @@ body {
 }
 
 input, textarea, select {
-  font-size: 16px; /* Ensure input text size is large enough to avoid zoom */
-  -webkit-text-size-adjust: 100%; /* Prevent zooming when inputs are focused */
+  font-size: 16px; 
+  -webkit-text-size-adjust: 100%; 
   -moz-text-size-adjust: 100%;
 }

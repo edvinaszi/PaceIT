@@ -33,7 +33,7 @@ function StopwatchScreen() {
       const currentElapsedTime = (Date.now() - startTime) / 1000;
       setElapsedTime(currentElapsedTime);
 
-      const distanceInKm = distance / 1000;
+      const distanceInKm = distance;
       const paceInSecondsPerKm = currentElapsedTime / distanceInKm;
 
       const paceMinutes = Math.floor(paceInSecondsPerKm / 60);
@@ -66,7 +66,7 @@ function StopwatchScreen() {
     setElapsedTime(totalTime);
 
     if (totalTime > 0 && distance > 0) {
-      const distanceInKm = distance / 1000;
+      const distanceInKm = distance;
       const totalSeconds = totalTime / distanceInKm;
       const minutes = Math.floor(totalSeconds / 60);
       const seconds = Math.round(totalSeconds % 60);
@@ -75,9 +75,9 @@ function StopwatchScreen() {
     }
 
     const newRun = {
-      distance: distance / 1000,
+      distance: distance,
       time: totalTime / 60,
-      speed: (distance / 1000) / (totalTime / 3600),
+      speed: distance / (totalTime / 3600),
       pace: averagePace,
       date: new Date().toLocaleString(),
     };

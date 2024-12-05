@@ -35,7 +35,7 @@ function PaceSetter() {
       const intervalId = setInterval(() => {
         if (currentDistance > 0 && startTime) {
           const elapsedTimeInMinutes = (Date.now() - startTime + elapsedTime) / (1000 * 60);
-          const paceInMinutesPerKm = elapsedTimeInMinutes / (currentDistance / 1000);
+          const paceInMinutesPerKm = elapsedTimeInMinutes / currentDistance;
           const paceMinutes = Math.floor(paceInMinutesPerKm);
           const paceSeconds = Math.round((paceInMinutesPerKm - paceMinutes) * 60);
 
@@ -160,7 +160,6 @@ function PaceSetter() {
       ) : (
         <>
           <p>Target Speed: {targetSpeed ? `${targetSpeed} km/h` : 'N/A'}</p>
-          <p>Current Speed: {currentSpeed ? `${currentSpeed.toFixed(2)} km/h` : '0 km/h'}</p>
           <p>Distance Covered: {currentDistance.toFixed(2)} km</p>
           <p>Target Pace: {targetPace ? `${targetPace} min/km` : 'N/A'}</p>
           <p>Current Pace: {currentPace ? `${currentPace} min/km` : 'Calculating...'}</p>
